@@ -20,7 +20,11 @@
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragments.ArticleFragment"
-        android:label="ArticleFragment" />
+        android:label="ArticleFragment" >
+        <argument
+            android:name="article"
+            app:argType="com.androiddevs.mvvmnewsapp.data.remote.api.dto.Article" />
+    </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"
         android:name="com.androiddevs.mvvmnewsapp.presentation.ui.fragments.SavedNewsFragment"

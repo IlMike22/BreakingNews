@@ -1,4 +1,4 @@
-package com.androiddevs.mvvmnewsapp.data.remote
+package com.androiddevs.mvvmnewsapp.data.remote.api
 
 import com.androiddevs.mvvmnewsapp.data.util.constants.Constants.Companion.BASE_URL
 import okhttp3.OkHttpClient

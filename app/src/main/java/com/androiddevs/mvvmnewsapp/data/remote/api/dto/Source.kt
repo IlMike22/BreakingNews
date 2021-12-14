@@ -1,4 +1,4 @@
-package com.androiddevs.mvvmnewsapp.data.remote.dto
+package com.androiddevs.mvvmnewsapp.data.remote.api.dto
 
 data class Source(
     val id: Any,

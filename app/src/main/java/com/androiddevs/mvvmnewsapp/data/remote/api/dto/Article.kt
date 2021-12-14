@@ -1,4 +1,6 @@
-package com.androiddevs.mvvmnewsapp.data.remote.dto
+package com.androiddevs.mvvmnewsapp.data.remote.api.dto
+
+import java.io.Serializable
 
 data class Article(
     val author: String,
@@ -9,4 +11,4 @@ data class Article(
     val title: String,
     val url: String,
     val urlToImage: String
-)
+) : Serializable
