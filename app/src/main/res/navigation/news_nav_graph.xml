@@ -23,7 +23,7 @@
         android:label="ArticleFragment" >
         <argument
             android:name="article"
-            app:argType="com.androiddevs.mvvmnewsapp.data.remote.api.dto.Article" />
+            app:argType="com.androiddevs.mvvmnewsapp.models.Article" />
     </fragment>
     <fragment
         android:id="@+id/savedNewsFragment"

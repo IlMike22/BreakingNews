@@ -1,7 +1,7 @@
 package com.androiddevs.mvvmnewsapp.data.remote.database
 
 import androidx.room.TypeConverter
-import com.androiddevs.mvvmnewsapp.data.remote.api.dto.Source
+import com.androiddevs.mvvmnewsapp.models.Source
 
 class Converters {
     @TypeConverter

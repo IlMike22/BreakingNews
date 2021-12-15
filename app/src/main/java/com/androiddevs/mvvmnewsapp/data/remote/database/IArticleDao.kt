@@ -2,7 +2,7 @@ package com.androiddevs.mvvmnewsapp.data.remote.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.androiddevs.mvvmnewsapp.data.remote.entity.Article
+import com.androiddevs.mvvmnewsapp.models.Article
 
 @Dao
 interface IArticleDao {
@@ -10,7 +10,7 @@ interface IArticleDao {
     suspend fun insertOrUpdateArticel(articel: Article)
 
     @Query("SELECT * FROM articles")
-    fun getArticels(): LiveData<List<Article>>
+    fun getAllArticles(): LiveData<List<Article>>
 
     @Delete
     suspend fun deleteArticle(article: Article)

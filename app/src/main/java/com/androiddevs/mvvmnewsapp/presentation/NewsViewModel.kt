@@ -3,7 +3,8 @@ package com.androiddevs.mvvmnewsapp.presentation
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.androiddevs.mvvmnewsapp.data.remote.api.dto.NewsResponse
+import com.androiddevs.mvvmnewsapp.models.NewsResponse
+import com.androiddevs.mvvmnewsapp.models.Article
 import com.androiddevs.mvvmnewsapp.data.repository.NewsRepository
 import com.androiddevs.mvvmnewsapp.data.util.Resource
 import kotlinx.coroutines.launch
@@ -21,7 +22,7 @@ class NewsViewModel(
         getBreakingNews("us")
     }
 
-    fun getBreakingNews(countryCode: String) {
+    private fun getBreakingNews(countryCode: String) {
         viewModelScope.launch {
             breakingNews.postValue(Resource.Loading())
             val result = repository.getBreakingNews(
@@ -38,6 +39,20 @@ class NewsViewModel(
             searchNews.postValue(Resource.Loading())
             val result = repository.searchNews(query, searchNewsPage)
             searchNews.postValue(handleSearchNewsResponse(result))
+        }
+    }
+
+    fun deleteArticle(article: Article) {
+        viewModelScope.launch {
+            repository.deleteArticle(article)
+        }
+    }
+
+    fun getSavedNews() = repository.getSavedNews()
+
+    fun insertOrUpdateArticle(article: Article) {
+        viewModelScope.launch {
+            repository.insertOrUpdate(article)
         }
     }
 
